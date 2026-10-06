@@ -1,0 +1,41 @@
+###1. Obtener todas las tareas
+GET /api/tareas HTTP/1.1
+Host: localhost:3000
+###2. Obtener tarea por id
+GET http://localhost:3000/api/tareas/1
+
+###3. Crear tarea
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+"titulo": "Nueva tarea",
+"completada": false
+}
+
+###4. Actualizar tarea
+PUT http://localhost:3000/api/tareas/1
+Content-Type: application/json
+
+{
+ "titulo": "Tarea actualizada",
+ "completada": true
+}
+
+###5. Actualizar parcialmente 
+PATCH http://localhost:3000/api/tareas/1
+Content-Type: application/json
+
+{
+ "completada": true
+}
+
+###6. Eliminar tarea
+DELETE http://localhost:3000/api/tareas/3
+
+###7. Crear tarea mal(404)
+POST http://localhost:3000/api/tarea
+Content-Type: application/json
+
+###8. Buscar tareas
+GET http://localhost:3000/api/tareas/buscar?q=express
